@@ -1,0 +1,22 @@
+1. What type of data will store the jokes?
+Type: A list of maps (List<Map<String, String>>).
+Each joke is represented as a Map with fields for id, title, and description. 
+This structure makes it easy to access joke information by key.
+2. What type of data will store the favorite joke?
+Type: A String? (nullable string) representing the id of the favorite joke.
+Explanation: Storing just the id of the favorite joke allows us to efficiently track which joke is marked as favorite.
+If no joke is selected, this value is null.
+3. Which widget should be in charge of storing the favorite joke?
+Widget: The FavoriteJokesList widget.
+Explanation: The FavoriteJokesList widget is responsible for managing and updating the state of the favorite joke. 
+It holds the _favoriteJokeId variable to track the current favorite.
+4. Which widget should be stateful?
+Widget: FavoriteJokesList.
+Explanation: FavoriteJokesList is stateful because it needs to remember and update which joke is currently marked as the favorite.
+5. How will your widget interact?
+Interaction: FavoriteJokesList passes each joke’s data, along with the favorite status and a callback function, to each FavoriteCard widget.
+Explanation: FavoriteJokesList iterates through the list of jokes and passes a callback (onFavoriteSelected) to each FavoriteCard so that each card can request to set itself as the favorite.
+6. Do you need to pass a callback function between widgets?
+Yes.
+Explanation: The FavoriteJokesList widget passes a callback function (onFavoriteSelected) to each FavoriteCard. 
+This callback allows FavoriteCard to notify FavoriteJokesList when a joke is selected as the favorite, so it can update the _favoriteJokeId accordingly.

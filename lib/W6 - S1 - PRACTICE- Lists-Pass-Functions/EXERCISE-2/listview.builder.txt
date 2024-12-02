@@ -1,0 +1,7 @@
+This task can also be done with the help of ListView then why we used ListView.builder?
+
+The answer to this question is that we can do the same task with the help of ListView 
+but when we have numerous items(for ex: 10000) then it is inefficient to create these items
+with ListView because it loads all the list items at once but ListView.
+builder make this task quicker by creating layouts for  items visible
+on the screen with the help of itemBuilder & lazily build other layouts/containers as the user scrolls.
